@@ -16,7 +16,11 @@ const NavTop = () => {
     
       </div>
       <div>
-        gfcfhg
+        <Link href={"/TextMask"}>
+
+        TextMask
+        </Link>
+      
       </div>
       <div>
         gfcfhg
