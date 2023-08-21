@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const OnscrollOPacity = () => {
     const refs = useRef<HTMLElement[]>([]);
     const Containerref = useRef<HTMLDivElement>(null); 
-  const phrase="  Please note that this "
+  const phrase= "Good code is its own best documentation. As you’re about to add a comment, ask yourself, “How can I improve the code so that this comment isn’t needed?” Improve the code and then document it to make it even clearer. "
 
     const splitLetters = (word: string) => {
       let letters: React.ReactNode[] = [];
@@ -42,12 +42,12 @@ const OnscrollOPacity = () => {
 
     const CreateAnimation = () => {
         console.log("current ref",refs.current);
-        gsap.set(refs.current, { opacity: 0 });
+        // gsap.set(refs.current, { opacity: 0.3 });
         gsap.to(refs.current, {
             opacity: 1,
             ease: 'none',
            
-            stagger:0.8,
+            stagger:1,
             scrollTrigger: {
                 trigger: Containerref.current,
                 start: 'top 80%',
@@ -70,10 +70,13 @@ const OnscrollOPacity = () => {
 
 
   return (
-    <div ref={Containerref} className=' mx-4   justify-center items-center flex flex-wrap  '>
+
+    <div className=' flex '>
+    <div ref={Containerref} className=' mx-4   justify-center items-center flex flex-wrap  bottom-0 mb-0 '>
         {
             splitWords(phrase)
         }
+    </div>
     </div>
   )
 }

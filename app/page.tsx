@@ -1,31 +1,28 @@
 import Image from 'next/image'
 import OnscrollOPacity from './components/Text/OnscrollOPacity'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-
-
-
-        <div className=' h-[130vh]'>
-
-
-
-          <div className=' h-[1200px]  items-center justify-between flex shadow-2xl'>
-            <div className=' mx-auto'>
-              <OnscrollOPacity />
-            </div>
-          </div>
-
+    <main className="flex  flex-col items-center justify-between p-24">
+      <div className=' mt-0  flex justify-even w-full items-center  gap-10  '>
+        <div>
+          <Link href={"/Textscroll"}>
+          TextScrolls
+          </Link>
+      
         </div>
-    
-
-
-
-
-     
+        <div>
+          gfcfhg
+        </div>
+        <div>
+          gfcfhg
+        </div>
       </div>
+
+
+      animations
+
 
 
     </main>
