@@ -24,13 +24,20 @@ const NavTop = () => {
           </div>
           <div>
             <Link href={"/StickyScroll"}>
-
               StikyScroll
             </Link>
 
 
           </div>
-        </div>
+          <div>
+            <Link href={"/Starg"}>
+
+            Starg
+            </Link>
+
+
+          </div>
+          </div>
 
 
         animations
