@@ -119,7 +119,7 @@ const ServerPost = async() => {
         <h1>Server</h1>
 
         {data.map((movie) => (
-            <div key={movie.id} className=" bg-slate-700 p-4 ">
+            <div key={movie.id} className=" bg-primary-foreground p-4 ">
                 <h2>{movie.title}</h2>
                 <p>{movie.description}</p>
                 <p>{movie.year}</p>

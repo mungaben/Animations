@@ -4,7 +4,7 @@ import React from "react";
 
 const NavTop = () => {
   return (
-    <div className=" fixed top-0 w-full  ">
+    <div className=" fixed top-0 w-full z-50 shadow-blue-900  bg-primary-foreground  ">
       <nav className="flex  flex-row  items-center justify-around pt-5">
         <div className=" mt-0  flex justify-even w-full items-center  gap-10  ">
           <div>

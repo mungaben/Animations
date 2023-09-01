@@ -7,7 +7,7 @@ import ServerPost from './components/ServerPost'
 
 const page = () => {
   return (
-    <main className=' w-full justify-center flex flex-col'>
+    <main className=' w-full justify-center flex flex-col z-10' >
       <PostMovie/>
       <ServerPost/>
     </main>
