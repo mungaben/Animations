@@ -10,7 +10,7 @@ import { Movie, Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
 
-const handleSubmit = async(formData: FormData) => {
+const handleSubmitPOst = async(formData: FormData) => {
     
     // Handle form submission here, e.g., send a POST request to your API
     // get values from formData
@@ -36,5 +36,5 @@ const handleSubmit = async(formData: FormData) => {
         revalidatePath("/movies");
   };
 
-  export default handleSubmit;
+  export default handleSubmitPOst
   
