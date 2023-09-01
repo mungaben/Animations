@@ -20,6 +20,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import handleSubmitPOst from "../actions/Formactions";
+import POstButton from "./POstButton";
 
 const formSchema = z.object({
     title: z.string().nonempty({
@@ -68,7 +69,7 @@ const ValidPostForm = () => {
                 <FormItem>
                   <FormLabel>TITLE</FormLabel>
                   <FormControl>
-                    <Input placeholder="Title" {...field} />
+                    <Input required placeholder="Title" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -82,7 +83,7 @@ const ValidPostForm = () => {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Input placeholder="Description" {...field} />
+                    <Input required placeholder="Description" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -96,7 +97,7 @@ const ValidPostForm = () => {
                 <FormItem>
                   <FormLabel>Year</FormLabel>
                   <FormControl>
-                    <Input placeholder="Year" {...field} />
+                    <Input required placeholder="Year" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -110,7 +111,7 @@ const ValidPostForm = () => {
                 <FormItem>
                   <FormLabel>Rating</FormLabel>
                   <FormControl>
-                    <Input placeholder="Rating" {...field} />
+                    <Input required placeholder="Rating" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -124,7 +125,7 @@ const ValidPostForm = () => {
                 <FormItem>
                   <FormLabel>DirectorId</FormLabel>
                   <FormControl>
-                    <Input placeholder="DirectorId" {...field} />
+                    <Input required placeholder="DirectorId" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -132,7 +133,7 @@ const ValidPostForm = () => {
               )}
             />
 
-            <Button  type="submit">Submit</Button>
+            <POstButton/>
           </form>
         </Form>
       
