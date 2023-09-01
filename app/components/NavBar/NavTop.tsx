@@ -1,57 +1,36 @@
-
-
-
-import Link from 'next/link'
-import React from 'react'
+import { ModeToggle } from "@/components/Modetoggle";
+import Link from "next/link";
+import React from "react";
 
 const NavTop = () => {
   return (
-    <div className=' fixed top-0 w-full'>
-      <nav className="flex  flex-col items-center justify-between p-24 pt-5">
-        <div className=' mt-0  flex justify-even w-full items-center  gap-10  '>
+    <div className=" fixed top-0 w-full  ">
+      <nav className="flex  flex-row  items-center justify-around pt-5">
+        <div className=" mt-0  flex justify-even w-full items-center  gap-10  ">
           <div>
-            <Link href={"/Textscroll"}>
-              TextScrolls
-            </Link>
-
+            <Link href={"/Textscroll"}>TextScrolls</Link>
           </div>
           <div>
-            <Link href={"/TextMask"}>
-
-              TextMask
-            </Link>
-
+            <Link href={"/TextMask"}>TextMask</Link>
           </div>
           <div>
-            <Link href={"/StickyScroll"}>
-              StikyScroll
-            </Link>
-
-
+            <Link href={"/StickyScroll"}>StikyScroll</Link>
           </div>
           <div>
-            <Link href={"/Starg"}>
-
-            Starg
-            </Link>
-
-
+            <Link href={"/Starg"}>Starg</Link>
+          </div><div>
+            <Link href={"/Movies"}>Movies</Link>
           </div>
-          </div>
-
-
-        animations
-
-
-
+        </div>
+        <div className=" mx-10">
+          Animations
+        </div>
+        <div className=" flex-1 mx-10">
+          <ModeToggle/>
+        </div>
       </nav>
-
-
-
-
     </div>
+  );
+};
 
-  )
-}
-
-export default NavTop
+export default NavTop;
