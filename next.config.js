@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental:{
-        serverActions:true
-    }
-}
+  experimental: {
+    serverActions: true,
+  },
+  images: {
+    domains: ["github.com","fastly.picsum.photos", "picsum.photos"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

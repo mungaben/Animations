@@ -18,15 +18,17 @@ const NavTop = () => {
           </div>
           <div>
             <Link href={"/Starg"}>Starg</Link>
-          </div><div>
+          </div>
+          <div>
             <Link href={"/Movies"}>Movies</Link>
           </div>
+          <div>
+            <Link href={"/Horizontal"}>Horizontal</Link>
+          </div>
         </div>
-        <div className=" mx-10">
-          Animations
-        </div>
+        <div className=" mx-10">Animations</div>
         <div className=" flex-1 mx-10">
-          <ModeToggle/>
+          <ModeToggle />
         </div>
       </nav>
     </div>
