@@ -59,3 +59,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.inveted{
+  -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0005);
+}
