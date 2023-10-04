@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const path = require('path')
+
 const nextConfig = {
   experimental: {
     serverActions: true,
@@ -6,6 +9,7 @@ const nextConfig = {
   images: {
     domains: ["github.com","fastly.picsum.photos", "picsum.photos"],
   },
+
 };
 
 module.exports = nextConfig;
