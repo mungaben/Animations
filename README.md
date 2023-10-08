@@ -69,7 +69,7 @@ used form action to send data to the backend
 ### */Metamask* page
 ![Image Alt Text](/public/textenter.png)
 ...on scroll image animation
-![Image Alt Text](/public/metamask.png)
+![Image Alt Text](/public/imagescroll.png)
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
