@@ -28,6 +28,9 @@ const NavTop = () => {
           <div>
             <Link href={"/SlidingMenu"}>SidingMenu</Link>
           </div>
+          <div>
+            <Link href={"/Notifications"}>Notifications</Link>
+          </div>
         </div>
         <div className=" mx-10">Animations</div>
         <div className=" flex-1 mx-10">

@@ -4,8 +4,8 @@ const path = require('path')
 
 const nextConfig = {
   experimental: {
-    serverActions: true,
-  },
+    serverActions: true
+},
   images: {
     domains: ["github.com","fastly.picsum.photos", "picsum.photos"],
   },
