@@ -18,7 +18,7 @@ const Horizonsection = () => {
             x
         }}>
          {
-            Array(50).fill(0).map((_,i)=><div>
+            Array(50).fill(0).map((_,i)=><div key={i}>
                 <Image src={`https://picsum.photos/200/300?random=${i}`} width={500} height={500} alt={"random image"} className=" min-h-[500px] flex flex-1 w-[50dvw] min-w-[300px]  scroll-ml-6 inveted  "  />
             </div>
             )

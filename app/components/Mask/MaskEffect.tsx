@@ -16,7 +16,8 @@ const MaskEffect = () => {
         <div className=" body ">
           <p className=" ">
             Full-stack developer specializing in Next.js and SCSS. Passionate
-            about creating efficient and user-friendly web applications. Let's
+            about creating efficient and user-friendly web applications.
+             Lets
             build something amazing together
           </p>
         </div>
