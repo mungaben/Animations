@@ -1,5 +1,4 @@
-
-"use server"
+"use client";
 import React, { FC } from "react";
 import {
   NotificationBell,
@@ -7,8 +6,8 @@ import {
   PopoverNotificationCenter,
 } from "@novu/notification-center";
 
- const NovuComp: FC<{ user: string }> = (props) => {
-  "use client"
+const NovuComp: FC<{ user: string }> = (props) => {
+
   const { user } = props;
   const colorScheme = "light";
   const Application_ID = process.env.NEXT_PUBLIC_APPLICATION_ID;

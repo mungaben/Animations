@@ -2,16 +2,16 @@ import React from "react";
 import { sql } from "@vercel/postgres";
 import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
-import BidsInput from "./components/BidsInput";
+// import BidsInput from "./components/BidsInput";
 import Products from "./components/Products";
 import { ITriggerPayloadOptions } from "@novu/node/build/main/lib/events/events.interface";
-import { Novu } from "@novu/node";
+// import { Novu } from "@novu/node";
 
-import NovuComp from "./components/Novux";
+// import NovuComp from "./components/Novux";
 const page = async () => {
   const login = cookies().get("login");
   const Novu_ID = process.env.NOVU_API_KEY;
-  const novu = new Novu(Novu_ID!);
+//   const novu = new Novu(Novu_ID!);
   const addBid = async (id: number, bid: number) => {
     "use server";
     // @ts-ignore
@@ -19,30 +19,30 @@ const page = async () => {
     await sql`UPDATE bids SET total_bids = total_bids + ${bid} WHERE id = ${id}`;
     const { rows } = await sql`SELECT * FROM bids WHERE id = ${id}`;
 
-    await novu.trigger("host-bid", {
-      to: [
-        {
-          subscriberId: rows[0].owner,
-        },
-      ],
-      payload: {
-        name: login?.value!,
-        bid: bid,
-      },
-    });
+    // await novu.trigger("host-bid", {
+    //   to: [
+    //     {
+    //       subscriberId: rows[0].owner,
+    //     },
+    //   ],
+    //   payload: {
+    //     name: login?.value!,
+    //     bid: bid,
+    //   },
+    // });
 
-    await novu.topics.addSubscribers(`bid-${id}`, {
-      subscribers: [login?.value!],
-    });
+    // await novu.topics.addSubscribers(`bid-${id}`, {
+    //   subscribers: [login?.value!],
+    // });
 
-    await novu.trigger("new-bid-in-the-system", {
-      to: [{ type: "Topic", topicKey: `bid-${id}` }],
-      payload: {
-        name: login?.value!,
-        bid: bid,
-      },
-      actor: { subscriberId: login?.value! },
-    } as ITriggerPayloadOptions);
+    // await novu.trigger("new-bid-in-the-system", {
+    //   to: [{ type: "Topic", topicKey: `bid-${id}` }],
+    //   payload: {
+    //     name: login?.value!,
+    //     bid: bid,
+    //   },
+    //   actor: { subscriberId: login?.value! },
+    // } as ITriggerPayloadOptions);
     revalidatePath("/");
   };
 
@@ -51,10 +51,10 @@ const page = async () => {
     const login = cookies().get("login");
     const { rows } =
       await sql` INSERT INTO bids (name,owner,total_bids) VALUES(${product},${login?.value!},0) RETURNING id`;
-    await novu.topics.create({
-      key: `bid-${rows[0].id}`,
-      name: "People inside of a bid",
-    });
+    // await novu.topics.create({
+    //   key: `bid-${rows[0].id}`,
+    //   name: "People inside of a bid",
+    // });
     revalidatePath("/");
   };
 
@@ -66,7 +66,7 @@ const page = async () => {
           Product Listing ({login?.value!})
         </h1>
         <div>
-            <NovuComp user={login?.value!} />
+            {/* <NovuComp user={login?.value!} /> */}
         </div>
       </div>
       <Products addProduct={addProduct} />
@@ -83,7 +83,7 @@ const page = async () => {
               <strong>Current Bid</strong>: {product.total_bids}
             </div>
             <div className=" bg-red-700">
-              <BidsInput addBid={addBid} id={product.id} />
+              {/* <BidsInput addBid={addBid} id={product.id} /> */}
             </div>
           </div>
         ))}
