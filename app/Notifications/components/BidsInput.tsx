@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, use, useCallback, useState } from "react";
+import React, { FC,  useCallback, useState } from "react";
 
 const BidsInput: FC<{
   id: number;
