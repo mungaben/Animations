@@ -2,12 +2,14 @@ import React from "react";
 import { sql } from "@vercel/postgres";
 import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
-// import BidsInput from "./components/BidsInput";
+import BidsInput from "./components/BidsInput";
 import Products from "./components/Products";
 import { ITriggerPayloadOptions } from "@novu/node/build/main/lib/events/events.interface";
 // import { Novu } from "@novu/node";
-
-// import NovuComp from "./components/Novux";
+// 
+import NovuComp from "./components/Novux";
+import { TriggerNotif, subscriber, updatesubscriber } from "./Subscriber";
+import NovuProvidercomp from "./components/NovuProviderComp";
 const page = async () => {
   const login = cookies().get("login");
   const Novu_ID = process.env.NOVU_API_KEY;
@@ -43,6 +45,11 @@ const page = async () => {
     //   },
     //   actor: { subscriberId: login?.value! },
     // } as ITriggerPayloadOptions);
+    await subscriber
+    // await updatesubscriber
+    const data=await TriggerNotif
+    console.log("data from nitification",data);
+    
     revalidatePath("/");
   };
 
@@ -67,6 +74,7 @@ const page = async () => {
         </h1>
         <div>
             {/* <NovuComp user={login?.value!} /> */}
+            <NovuProvidercomp/>
         </div>
       </div>
       <Products addProduct={addProduct} />
@@ -82,8 +90,8 @@ const page = async () => {
             <div className="text-lg">
               <strong>Current Bid</strong>: {product.total_bids}
             </div>
-            <div className=" bg-red-700">
-              {/* <BidsInput addBid={addBid} id={product.id} /> */}
+            <div className="">
+              <BidsInput addBid={addBid} id={product.id} />
             </div>
           </div>
         ))}
